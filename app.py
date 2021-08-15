@@ -5,7 +5,8 @@ import pandas as pd
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
-from sqlalchemy import create_engine, func
+from sqlalchemy import create_engine, func, desc
+
 from flask import Flask, jsonify
 
 engine = create_engine("sqlite:///hawaii.sqlite")
@@ -24,11 +25,11 @@ app = Flask(__name__)
 def welcome():
     return(
     '''
-    Welcome to the Climate Analysis API!
-    Available Routes:
-    /api/v1.0/precipitation
-    /api/v1.0/stations
-    /api/v1.0/tobs
+    Welcome to the Climate Analysis API!<br/><br/>
+    Available Routes:<br/><br/>
+    /api/v1.0/precipitation<br/><br/>
+    /api/v1.0/stations<br/><br/>
+    /api/v1.0/tobs<br/><br/>
     /api/v1.0/temp/start/end
     ''')
     
